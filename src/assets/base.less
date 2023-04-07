@@ -1,0 +1,65 @@
+@import '~antd/dist/antd.css';
+@bgcolor:#efefef;
+
+body{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #333;
+    background-color: @bgcolor;
+}
+#app{
+    height: 100vh; //vh: 相对于视窗的高度, 视窗被均分为100单位的vh; 
+}
+header {
+    height: 70px;
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex; //弹性布局
+    justify-content: space-between;  //两端对齐，项目之间的间隔都相等。
+    align-items: center;  //交叉轴的中点对齐 理解为处于正中间，项目高度不变
+    .right {
+        height: 40px;
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        span {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+.ant-dropdown-link {
+    height: 60px;
+    display: block;
+    color: #333;
+    &:hover{
+        color: #1890ff;
+    }
+}
+.container{
+    display: flex;
+    .aside {
+        height: calc(100vh - 140px);  //header和footer高度为70px
+    }
+    .container_box{
+        flex: 1; //填满剩余空间
+        box-sizing: border-box; //padding和border的值就不会在影响元素的宽高，相当于把padding和border的值都算在content 里
+        padding: 20px;
+        display: flex;
+        flex-direction: column; //主轴为垂直方向，起点在上沿
+        .container_content{
+            height: calc(100vh - 210px);
+            overflow: hidden;
+        }
+    }
+}
+
+footer{
+    height: 70px;
+    background-color: #001529;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+}
